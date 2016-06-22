@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="App" lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="public/css/styles.css" rel="stylesheet"/>
+    <link href="public/css/spinner.css" rel="stylesheet"/>
+
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+            <a ui-sref="home"><h1>Social Media Dashboard</h1></a>
+        </div>
+      </div>
+    </div>
+    <nav class=" navbar-inverse">
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a ui-sref="networks({provider: 'facebook'})">facebook</a></li>
+        <li><a  ui-sref="networks({provider: 'twitter'})">twitter</a></li>
+        <li><a ui-sref="networks({provider: 'instagram'})">instagram</a></li>
+         <li><a  ui-sref="networks({provider: 'tumblr'})">tumblr</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div>
+    </div>
+</nav>
+  
+      <!--<div class="input-group">
+        <span class="input-group-addon" style="width:100px:" id="basic-addon1">Search</span>
+        <input type="text" class="form-control" placeholder="search for social activity">
+      </div>-->
+      <div class="row">
+          <div class="col-lg-3">
+            <div class="inner">
+              <!--<ul class="nav nav-pills nav-stacked">
+                  <li id="facebook" role="presentation"><a ui-sref="networks({provider: 'facebook'})">Facebook</a></li>
+                  <li id="twitter" role="presentation"><a ui-sref="networks({provider:'twitter'})">Twitter</a></li>
+                  <li id="tumblr" role="presentation" ><a ui-sref="networks({provider:'tumblr'})">Tumblr</a></li>
+                  <li id="instagram" role="presentation"><a ui-sref="networks({provider:'instagram'})">Instagram</a></li>
+              </ul>-->
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <ui-view></ui-view>
+          </div>
+      </div>
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+    <script src="app.js" type="text/javascript"></script>
+    <script src="public/controllers/homeControl.js" type="text/javascript"></script>
+    <script src="public/controllers/network_control.js" type="text/javascript"></script>
+    <script src="public/factories/socialNetworkFactory.js" type="text/javascript"></script>
+    <script src="public/directives/network.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+        <div class="row social-post">
+            <div class="col-lg-4 col-lg-offset-2 col-sm-12 avatar">
+                <h3 class="col-sm-12">{{item.actor_name}}</h3>
+                <div class="row circle-pic" ng-style="{'background-image': 'url(' + item.actor_avator + ')' }"></div>
+                <div class="row circle-pic-jr"></div>
+            </div>
+
+            <div class="share-image col-lg-12 col-md-12 col-sm-12">
+                <div class="text col-md-6"></div>
+                <div ng-if="item.activity_attachment_type === 'image/jpeg'">
+                    <div class="col-md-6 col-offset-6  img">
+                        <h4 class="col-md-12"><small>{{item.provider}}</small></h4>
+                        <img ng-src="{{item.activity_message}}">
+                         
+                    </div>
+                    <h5 class="col-md-3 col-md-offset-9">
+                        <button class="btn-danger">unlike</button>
+                        <button class="btn-success">like</button>
+                    </h5>
+                </div>
+
+
+                <div ng-if="item.activity_attachment_type === null">
+                    <div class="col-md-6 col-offset-6">
+                        <h3><small>Message Content</small></h3>
+                        <p class="text-justify">{{item.activity_message}}"</p>
+                        <h4 class="col-md-12">
+                            <small>{{item.provider}}</small>
+                        </h4>
+                        <h5 class="col-md-6 col-md-offset-6">
+                            <button class="btn-danger">unlike</button>
+                            <button class="btn-success">like</button>
+                        </h5>
+                    </div>
+                </div>
+                 
+            </div>
+        </div>
+
+
+
