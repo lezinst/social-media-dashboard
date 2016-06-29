@@ -5,7 +5,7 @@ angular.module('App').factory('socialNetworkFactory', function($http){
 	var twitter = [];
 	var instagram = [];
 	var tumblr = [];
-/* makes a GET request to the end point to retrieve all of the posts*/
+//makes a GET request to the end point to retrieve all of the posts
 
 	function retrieve(provider){
 		return $http.get('https://nuvi-challenge.herokuapp.com/activities')
