@@ -14,6 +14,7 @@ app.config(function($stateProvider, $urlRouterProvider){
 		url:'/social-platform/:provider',
 		templateUrl: 'public/templates/chosenNetworkPage.html',
 		controller: 'network_control'
+		// NOTE: I had this in here originally,it worked, but I chose to go with a loading screen instead(versus a blank screen). This API was slow -- so bad for user experience.
 		// resolve:  {
 	 	// 	currentNetwork : function(socialNetworkFactory, $stateParams){
 		// 	var provider = $stateParams.id;

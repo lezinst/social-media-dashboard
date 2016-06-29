@@ -1,4 +1,3 @@
-/* makes a GET request to the end point to retrieve all of the posts*/
 
 angular.module('App').factory('socialNetworkFactory', function($http){
 
@@ -6,6 +5,7 @@ angular.module('App').factory('socialNetworkFactory', function($http){
 	var twitter = [];
 	var instagram = [];
 	var tumblr = [];
+/* makes a GET request to the end point to retrieve all of the posts*/
 
 	function retrieve(provider){
 		return $http.get('https://nuvi-challenge.herokuapp.com/activities')
@@ -14,7 +14,7 @@ angular.module('App').factory('socialNetworkFactory', function($http){
 				return sendPosts(provider);
 			});		
 	}
-	
+//Runs through all post objects and pushes it into the corresponding array above based on the provider property.	
 	function filterPosts(posts){
 		posts.forEach(function(post){
 			switch(post.provider){
@@ -32,7 +32,7 @@ angular.module('App').factory('socialNetworkFactory', function($http){
 			}
 		});
 	}
-
+//Only the chosen provider will be sent to the view
 	function sendPosts(provider){
 		switch(provider){
 			case "facebook" :
@@ -48,39 +48,11 @@ angular.module('App').factory('socialNetworkFactory', function($http){
 				return tumblr;					
 		}
 	}
-
 	return {
 		retrieve : retrieve
 	};
 
 });
 		
-		
-		
-		// var twitterTweets = [];
-		// var instagramPosts = [];
-		// var facebookPosts = [];
-		// var tumblrPosts = [];
-	// 	}).then(function(data){
-	// 		data.forEach(function(entry){
-	// 			if(data.provider === 'twitter'){
-	// 				twitterTweets.push(entry);
-	// 			};
-	// 			if(data.provider === 'instagram'){
-	// 				instagramPosts.push(entry);
-	// 			};
-	// 			if(data.provider === 'facebook'){
-	// 				facebookPosts.push(entry);
-	// 			};
-	// 			if(data.provider === 'tumblr'){
-	// 				tumblrPosts.push(entry);
-	// 			};
-
-	// 		});
-	// 	}).then(function(){
-	// 		console.log()
-	// 	})		
-	// }
-
 
 //end of service

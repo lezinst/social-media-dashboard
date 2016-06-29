@@ -11,7 +11,6 @@ angular.module('App').controller('network_control', function($scope, socialNetwo
         $scope.waitingForNetwork = true;
 
         $scope.provider = $stateParams.provider;
-        console.log("$scope.provider", $scope.provider);
 
         socialNetworkFactory
         .retrieve($scope.provider)
@@ -20,7 +19,6 @@ angular.module('App').controller('network_control', function($scope, socialNetwo
             $scope.posts = socialMediaPostsObject;
             $scope.waitingForNetwork = false;
             }
-        console.log("scope.posts", $scope.posts);
         });
     };	
 
